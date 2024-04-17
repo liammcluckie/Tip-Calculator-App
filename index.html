@@ -5,10 +5,89 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <link rel="stylesheet" href="src/css/style.css" />
-        <title>Project Starter Setup</title>
+        <link
+            rel="icon"
+            type="image/png"
+            sizes="32x32"
+            href="assets/images/favicon-32x32.png"
+        />
+        <link rel="stylesheet" href="assets/src/css/style.css" />
+        <title>Tip calculator app</title>
     </head>
     <body>
-        <script src="src/js/main.js" defer></script>
+        <header class="logo">
+            <img src="assets/svg/logo.svg" alt="App logo - Splitter" />
+        </header>
+
+        <section class="calculator">
+            <form action="">
+                <div class="calc-input">
+                    <div class="bill">
+                        <label for="bill">Bill</label>
+                        <div class="input-container">
+                            <img
+                                src="assets/svg/icon-dollar.svg"
+                                alt="Dollar Sign"
+                            />
+                            <input
+                                type="number"
+                                id="bill"
+                                name="bill"
+                                placeholder="0"
+                            />
+                        </div>
+                    </div>
+                    <div class="tip">
+                        <p>Select Tip %</p>
+                        <div class="tip-buttons">
+                            <button>5%</button>
+                            <button>10%</button>
+                            <button>15%</button>
+                            <button>25%</button>
+                            <button>50%</button>
+                            <input type="number" placeholder="Custom" />
+                        </div>
+                    </div>
+                    <div class="pax">
+                        <label for="pax">Number of People</label>
+                        <div class="input-container">
+                            <img
+                                src="assets/svg/icon-person.svg"
+                                alt="Person Icon"
+                            />
+                            <input
+                                type="number"
+                                id="pax"
+                                name="pax"
+                                placeholder="2"
+                            />
+                        </div>
+                    </div>
+                </div>
+                <div class="calc-results">
+                    <div class="tip-amount">
+                        <p class="amount-labels">
+                            Tip Amount<br /><span>/&nbsp;person</span>
+                        </p>
+                        <p id="amount" class="calculations heading-2">$4.27</p>
+                    </div>
+                    <div class="total-amount">
+                        <p class="amount-labels">
+                            Total<br /><span>/&nbsp;person</span>
+                        </p>
+                        <p id="total" class="calculations heading-2">$32.79</p>
+                    </div>
+                    <div class="reset">
+                        <input
+                            type="reset"
+                            placeholder="Reset"
+                            class="button"
+                        />
+                    </div>
+                </div>
+            </form>
+        </section>
+
+        <script src="assets/src/js/app.js" defer></script>
     </body>
 </html>
