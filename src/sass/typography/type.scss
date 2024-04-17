@@ -1,0 +1,33 @@
+.font-xl {
+    @include fluid(48px, 61px);
+}
+
+h1,
+.heading-1 {
+    @include fluid(31px, 48px);
+}
+
+h2,
+.heading-2 {
+    @include fluid(25px, 31px);
+}
+
+h3,
+.heading-3 {
+    @include fluid(20px, 25px);
+}
+
+h4,
+.heading-4 {
+    @include fluid(20px, 25px);
+}
+
+h5,
+.heading-5 {
+    @include fluid(18px, 22px);
+}
+
+h6,
+p {
+    @include fluid(16px, 16px);
+}
