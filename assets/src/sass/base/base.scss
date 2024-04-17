@@ -36,10 +36,19 @@ html:focus-within {
 html {
     font-family: $font;
     font-size: 16px;
+    background-color: $bg;
+    color: $grey--dark;
 }
 
 /* Set core body defaults */
 body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1440px;
+    margin-inline: auto;
+
     min-height: 100vh;
     text-rendering: optimizeSpeed;
     line-height: 1.5;
