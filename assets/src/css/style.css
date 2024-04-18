@@ -221,7 +221,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   cursor: pointer;
   transition: all 0.3s ease;
 }
-.tip-buttons button:hover, .tip-buttons button:focus {
+.tip-buttons button:hover, .tip-buttons button:focus, .tip-buttons button.active {
   background-color: hsl(172, 67%, 45%);
   color: hsl(183, 100%, 15%);
 }

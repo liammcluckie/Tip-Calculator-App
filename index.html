@@ -20,7 +20,8 @@
         </header>
 
         <section class="calculator">
-            <form action="">
+            <form id="calculatorApp" v-bind="store.calculate()">
+                <!-- {{ store }} -->
                 <div class="calc-input">
                     <div class="bill">
                         <label for="bill">Bill</label>
@@ -30,6 +31,7 @@
                                 alt="Dollar Sign"
                             />
                             <input
+                                v-model="store.bill"
                                 type="number"
                                 id="bill"
                                 name="bill"
@@ -40,12 +42,51 @@
                     <div class="tip">
                         <p>Select Tip %</p>
                         <div class="tip-buttons">
-                            <button>5%</button>
-                            <button>10%</button>
-                            <button>15%</button>
-                            <button>25%</button>
-                            <button>50%</button>
-                            <input type="number" placeholder="Custom" />
+                            <button
+                                class="tip-btn"
+                                data-tip="5"
+                                v-on:click.prevent="store.getTip(5)"
+                                @click="store.isActive"
+                            >
+                                5%
+                            </button>
+                            <button
+                                class="tip-btn"
+                                data-tip="10"
+                                v-on:click.prevent="store.getTip(10)"
+                                @click="store.isActive"
+                            >
+                                10%
+                            </button>
+                            <button
+                                class="tip-btn"
+                                data-tip="15"
+                                v-on:click.prevent="store.getTip(15)"
+                                @click="store.isActive"
+                            >
+                                15%
+                            </button>
+                            <button
+                                class="tip-btn"
+                                data-tip="25"
+                                v-on:click.prevent="store.getTip(25)"
+                                @click="store.isActive"
+                            >
+                                25%
+                            </button>
+                            <button
+                                class="tip-btn"
+                                data-tip="50"
+                                v-on:click.prevent="store.getTip(50)"
+                                @click="store.isActive"
+                            >
+                                50%
+                            </button>
+                            <input
+                                @keyup="store.customTip"
+                                type="number"
+                                placeholder="Custom"
+                            />
                         </div>
                     </div>
                     <div class="pax">
@@ -56,10 +97,11 @@
                                 alt="Person Icon"
                             />
                             <input
+                                v-model="store.pax"
                                 type="number"
                                 id="pax"
                                 name="pax"
-                                placeholder="2"
+                                placeholder="0"
                             />
                         </div>
                     </div>
@@ -69,16 +111,21 @@
                         <p class="amount-labels">
                             Tip Amount<br /><span>/&nbsp;person</span>
                         </p>
-                        <p id="amount" class="calculations heading-2">$4.27</p>
+                        <p class="calculations heading-2">
+                            ${{ store.tipPerPerson }}
+                        </p>
                     </div>
                     <div class="total-amount">
                         <p class="amount-labels">
                             Total<br /><span>/&nbsp;person</span>
                         </p>
-                        <p id="total" class="calculations heading-2">$32.79</p>
+                        <p class="calculations heading-2">
+                            ${{ store.totalPerPerson }}
+                        </p>
                     </div>
                     <div class="reset">
                         <input
+                            v-on:click="store.reset()"
                             type="reset"
                             placeholder="Reset"
                             class="button"
@@ -88,6 +135,6 @@
             </form>
         </section>
 
-        <script src="assets/src/js/app.js" defer></script>
+        <script type="module" src="assets/src/js/app.js" defer></script>
     </body>
 </html>
