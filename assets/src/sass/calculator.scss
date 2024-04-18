@@ -99,7 +99,8 @@ input[type="number"] {
         transition: all 0.3s ease;
 
         &:hover,
-        &:focus {
+        &:focus,
+        &.active {
             background-color: $primary;
             color: $primary--dark;
         }
