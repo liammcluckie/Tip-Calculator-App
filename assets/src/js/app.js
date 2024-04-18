@@ -10,6 +10,10 @@ const store = reactive({
         this.tip = dataTip;
     },
     customTip(event) {
+        const input = event.target;
+        const siblings = input.parentElement.children;
+        // remove the active class from buttons
+        this.removeActiveClass(siblings);
         // reset tip amount
         this.tip = 0;
         this.tip = event.target.value;
@@ -19,10 +23,13 @@ const store = reactive({
         // get all the siblings
         const allBtns = btn.parentElement.children;
         // we need to remove the current active class
-        allBtns.forEach(el => {
+        this.removeActiveClass(allBtns);
+        btn.classList.add('active');
+    },
+    removeActiveClass(collection) {
+        Array.from(collection).forEach(el => {
             el.classList.remove('active');
         });
-        btn.classList.toggle('active');
     },
     calculate() {
         if (this.bill && this.tip && this.pax) {
