@@ -121,6 +121,12 @@ h4,
   line-height: calc(2px + 2ex + 2px);
 }
 
+h5,
+.heading-5 {
+  font-size: clamp(1.13rem, 0.37vw + 1.05rem, 1.38rem);
+  line-height: calc(2px + 2ex + 2px);
+}
+
 h6,
 p {
   font-size: clamp(1rem, 0vw + 1rem, 1rem);
@@ -136,11 +142,17 @@ p {
   border-radius: 15px;
   box-shadow: rgba(0, 0, 0, 0.1) 0px 10px 15px -3px, rgba(0, 0, 0, 0.05) 0px 4px 6px -2px;
   padding: 1.5rem;
-  width: min(90vw, 670px);
+  width: min(100vw, 670px);
 }
 .calculator form {
   display: flex;
   column-gap: 2rem;
+}
+@media (max-width: 500px) {
+  .calculator form {
+    flex-direction: column;
+    row-gap: 2rem;
+  }
 }
 
 .calc-input,
@@ -221,6 +233,11 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   grid-template-rows: repeat(2, 1fr);
   gap: 0.75rem;
 }
+@media (max-width: 500px) {
+  .tip-buttons {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
 .tip-buttons button {
   background-color: hsl(183, 100%, 15%);
   color: hsl(0, 0%, 100%);
@@ -228,6 +245,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   border-radius: 4px;
   cursor: pointer;
   transition: all 0.3s ease;
+  padding-block: 0.5rem;
 }
 .tip-buttons button:hover, .tip-buttons button:focus, .tip-buttons button.active {
   background-color: hsl(172, 67%, 45%);
@@ -258,6 +276,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
 .total-amount {
   display: flex;
   justify-content: space-between;
+  row-gap: 0.35rem;
   margin-bottom: 1.5rem;
 }
 .tip-amount .calculations,
