@@ -83,6 +83,7 @@
                                 50%
                             </button>
                             <input
+                                id="customTip"
                                 @keyup="store.customTip"
                                 type="number"
                                 placeholder="Custom"
@@ -111,7 +112,7 @@
                         <p class="amount-labels">
                             Tip Amount<br /><span>/&nbsp;person</span>
                         </p>
-                        <p class="calculations heading-2">
+                        <p class="calculations heading-1">
                             ${{ store.tipPerPerson }}
                         </p>
                     </div>
@@ -119,7 +120,7 @@
                         <p class="amount-labels">
                             Total<br /><span>/&nbsp;person</span>
                         </p>
-                        <p class="calculations heading-2">
+                        <p class="calculations heading-1">
                             ${{ store.totalPerPerson }}
                         </p>
                     </div>
@@ -129,6 +130,7 @@
                             type="reset"
                             placeholder="Reset"
                             class="button"
+                            :disabled="store.isDisabled()"
                         />
                     </div>
                 </div>
