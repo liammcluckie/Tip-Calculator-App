@@ -1,5 +1,11 @@
 import { createApp, reactive } from 'https://unpkg.com/petite-vue?module';
 
+// Animate content in when everything has loaded
+window.addEventListener('load', () => {
+    const body = document.body;
+    body.classList.add('loaded');
+})
+
 const store = reactive({
     bill: '',
     tip: '',
