@@ -4,6 +4,7 @@ const store = reactive({
     bill: '',
     tip: '',
     pax: '',
+    setPlaceholder: 0,
     tipPerPerson: 0,
     totalPerPerson: 0,
     getTip(dataTip) {
@@ -41,6 +42,19 @@ const store = reactive({
         } else {
             this.tipPerPerson = 0;
             this.totalPerPerson = 0;
+        }
+    },
+    validate() {
+        const validatePax = document.querySelector('.pax-input-container');
+
+        if (this.pax === '') {
+            setTimeout(() => {
+                validatePax.classList.add('error');
+                this.setPlaceholder = "This can't be zero";
+            }, 300);
+        } else {
+            validatePax.classList.remove('error');
+            this.setPlaceholder = 0;
         }
     },
     reset() {

@@ -32,6 +32,7 @@
                             />
                             <input
                                 v-model="store.bill"
+                                @keyup="store.validate()"
                                 type="number"
                                 id="bill"
                                 name="bill"
@@ -92,17 +93,18 @@
                     </div>
                     <div class="pax">
                         <label for="pax">Number of People</label>
-                        <div class="input-container">
+                        <div class="input-container pax-input-container">
                             <img
                                 src="assets/svg/icon-person.svg"
                                 alt="Person Icon"
                             />
                             <input
                                 v-model="store.pax"
+                                @keyup="store.validate()"
                                 type="number"
                                 id="pax"
                                 name="pax"
-                                placeholder="0"
+                                :placeholder="store.setPlaceholder"
                             />
                         </div>
                     </div>
