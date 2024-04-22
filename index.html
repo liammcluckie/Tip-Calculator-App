@@ -12,14 +12,16 @@
             href="assets/images/favicon-32x32.png"
         />
         <link rel="stylesheet" href="assets/src/css/style.css" />
+        <script type="module" src="assets/src/js/app.js" defer></script>
+
         <title>Tip calculator app</title>
     </head>
     <body>
-        <header class="logo">
+        <header class="logo animate">
             <img src="assets/svg/logo.svg" alt="App logo - Splitter" />
         </header>
 
-        <section class="calculator">
+        <section class="calculator animate">
             <form id="calculatorApp" v-bind="store.calculate()">
                 <!-- {{ store }} -->
                 <div class="calc-input">
@@ -138,7 +140,5 @@
                 </div>
             </form>
         </section>
-
-        <script type="module" src="assets/src/js/app.js" defer></script>
     </body>
 </html>

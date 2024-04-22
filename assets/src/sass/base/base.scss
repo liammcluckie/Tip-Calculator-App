@@ -54,6 +54,14 @@ body {
     line-height: 1.5;
 }
 
+body.loaded {
+    .animate {
+        opacity: 1;
+        transform: translateY(0);
+        transition: all 1s ease;
+    }
+}
+
 /* A elements that don't have a class get default styles */
 a:not([class]) {
     text-decoration-skip-ink: auto;
