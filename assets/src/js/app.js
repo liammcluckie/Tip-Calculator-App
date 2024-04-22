@@ -1,9 +1,9 @@
 import { createApp, reactive } from 'https://unpkg.com/petite-vue?module';
 
 const store = reactive({
-    bill: 0,
-    tip: 0,
-    pax: 0,
+    bill: '',
+    tip: '',
+    pax: '',
     tipPerPerson: 0,
     totalPerPerson: 0,
     getTip(dataTip) {
@@ -44,8 +44,21 @@ const store = reactive({
         }
     },
     reset() {
+        this.removeActiveClass(document.querySelectorAll('.tip-btn'));
+        document.querySelector('#calculatorApp').reset();
+
+        this.bill = '';
+        this.tip = '';
+        this.pax = '';
         this.tipPerPerson = 0;
         this.totalPerPerson = 0;
+    },
+    isDisabled() {
+        if (this.bill !== '' || this.tip !== '' || this.pax !== '') {
+            return false;
+        }
+
+        return true;
     }
 });
 
