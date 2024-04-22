@@ -135,6 +135,14 @@ input[type="number"] {
     }
 }
 
+.pax-input-container {
+    transition: border-color 0.3s ease;
+
+    &.error {
+        border-color: $red;
+    }
+}
+
 .tip-amount,
 .total-amount {
     display: flex;
