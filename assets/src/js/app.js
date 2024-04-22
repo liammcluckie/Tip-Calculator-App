@@ -10,6 +10,7 @@ const store = reactive({
     getTip(dataTip) {
         this.tip = dataTip;
     },
+    // if user chooses to input a custom tip percentage
     customTip(event) {
         const input = event.target;
         const siblings = input.parentElement.children;
@@ -19,6 +20,7 @@ const store = reactive({
         this.tip = 0;
         this.tip = event.target.value;
     },
+    // add active button styles to clicked button
     isActive(event) {
         const btn = event.target;
         // get all the siblings
@@ -44,6 +46,7 @@ const store = reactive({
             this.totalPerPerson = 0;
         }
     },
+    // number of people (pax) cannot be 0/empty
     validate() {
         const validatePax = document.querySelector('.pax-input-container');
 
@@ -57,6 +60,7 @@ const store = reactive({
             this.setPlaceholder = 0;
         }
     },
+    // reset it all
     reset() {
         this.removeActiveClass(document.querySelectorAll('.tip-btn'));
         document.querySelector('#calculatorApp').reset();
@@ -67,6 +71,7 @@ const store = reactive({
         this.tipPerPerson = 0;
         this.totalPerPerson = 0;
     },
+    // Set attribute as required on reset button
     isDisabled() {
         if (this.bill !== '' || this.tip !== '' || this.pax !== '') {
             return false;
