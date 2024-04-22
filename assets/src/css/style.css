@@ -96,6 +96,15 @@ select {
     scroll-behavior: auto !important;
   }
 }
+.sr {
+  position: absolute;
+  left: -9999px;
+  top: auto;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
 @font-face {
   font-family: "space-mono";
   font-display: swap;
@@ -103,43 +112,16 @@ select {
   font-weight: 700;
   font-style: normal;
 }
-.font-xl {
-  font-size: clamp(3rem, 1.2vw + 2.76rem, 3.81rem);
-  line-height: calc(2px + 2ex + 2px);
-}
-
-h1,
 .heading-1 {
   font-size: clamp(1.94rem, 1.57vw + 1.62rem, 3rem);
   line-height: calc(2px + 2ex + 2px);
 }
 
-h2,
-.heading-2 {
-  font-size: clamp(1.56rem, 0.56vw + 1.45rem, 1.94rem);
-  line-height: calc(2px + 2ex + 2px);
-}
-
-h3,
-.heading-3 {
-  font-size: clamp(1.31rem, 0.37vw + 1.24rem, 1.56rem);
-  line-height: calc(2px + 2ex + 2px);
-}
-
-h4,
-.heading-4,
 .input {
   font-size: clamp(1.25rem, 0.37vw + 1.18rem, 1.5rem);
   line-height: calc(2px + 2ex + 2px);
 }
 
-h5,
-.heading-5 {
-  font-size: clamp(1.13rem, 0.37vw + 1.05rem, 1.38rem);
-  line-height: calc(2px + 2ex + 2px);
-}
-
-h6,
 p {
   font-size: clamp(1rem, 0vw + 1rem, 1rem);
   line-height: calc(2px + 2ex + 2px);
