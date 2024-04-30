@@ -34,7 +34,6 @@
                             />
                             <input
                                 v-model="store.bill"
-                                @keyup="store.validate()"
                                 type="number"
                                 id="bill"
                                 name="bill"
@@ -106,6 +105,7 @@
                                 type="number"
                                 id="pax"
                                 name="pax"
+                                value="2"
                                 :placeholder="store.setPlaceholder"
                             />
                         </div>
