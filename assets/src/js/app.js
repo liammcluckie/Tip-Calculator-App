@@ -41,7 +41,7 @@ const store = reactive({
         });
     },
     calculate() {
-        if (this.bill && this.tip) {
+        if (this.bill && this.tip && this.pax !== 0) {
             // default pax is 2
             this.pax = this.pax === '' ? 2 : this.pax;
 
