@@ -60,7 +60,7 @@ const store = reactive({
         const validatePax = document.querySelector('.pax-input-container');
         const input = validatePax.querySelector('#pax');
 
-        if (input.value == 0) {
+        if (input.value == '0') {
             setTimeout(() => {
                 validatePax.classList.add('error');
                 input.value = '';
@@ -68,7 +68,7 @@ const store = reactive({
             }, 300);
         } else {
             validatePax.classList.remove('error');
-            this.setPlaceholder = 0;
+            this.setPlaceholder = '';
         }
     },
     // reset it all
@@ -79,6 +79,7 @@ const store = reactive({
         this.bill = '';
         this.tip = '';
         this.pax = '';
+        this.setPlaceholder = 2;
         this.tipPerPerson = 0;
         this.totalPerPerson = 0;
     },
