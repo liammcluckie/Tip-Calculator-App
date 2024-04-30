@@ -263,7 +263,7 @@ input[type=number]::-webkit-outer-spin-button, input[type=number]::-webkit-inner
   transition: border-color 0.3s ease;
 }
 .pax-input-container.error {
-  border-color: #ff4500;
+  border-color: #ff4500 !important;
 }
 
 .tip-amount,
