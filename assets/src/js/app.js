@@ -10,7 +10,7 @@ const store = reactive({
     bill: '',
     tip: '',
     pax: '',
-    setPlaceholder: 0,
+    setPlaceholder: 2,
     tipPerPerson: 0,
     totalPerPerson: 0,
     getTip(dataTip) {
@@ -41,7 +41,10 @@ const store = reactive({
         });
     },
     calculate() {
-        if (this.bill && this.tip && this.pax) {
+        if (this.bill && this.tip) {
+            // default pax is 2
+            this.pax = this.pax === '' ? 2 : this.pax;
+
             const percentage = this.bill / 100 * this.tip;
             const total = this.bill + percentage;
             // Round totals to two decimal places
@@ -55,10 +58,12 @@ const store = reactive({
     // number of people (pax) cannot be 0/empty
     validate() {
         const validatePax = document.querySelector('.pax-input-container');
+        const input = validatePax.querySelector('#pax');
 
-        if (this.pax === '') {
+        if (input.value == 0) {
             setTimeout(() => {
                 validatePax.classList.add('error');
+                input.value = '';
                 this.setPlaceholder = "This can't be zero";
             }, 300);
         } else {
